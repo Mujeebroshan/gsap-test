@@ -2,7 +2,7 @@
   "name": "GSAP Test",
   "slug": "gsap-test",
   "version": "0.0.1",
-  "appUrl": "https://your-domain.com/panel.html",
+  "appUrl": "https://mujeebroshan.github.io/gsap-test/panel.html",
   "description": "Test GSAP preset injection.",
   "scopes": ["designer"],
   "designer": {
@@ -10,7 +10,7 @@
       {
         "type": "panel",
         "label": "GSAP Test Panel",
-        "source": "https://your-domain.com/panel.html"
+        "source": "https://mujeebroshan.github.io/gsap-test/panel.html"
       }
     ]
   }
