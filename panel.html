@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>GSAP Test</title>
+<style>
+body { font-family: sans-serif; padding: 20px; }
+button {
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+</style>
+</head>
+<body>
+
+<h3>GSAP Test</h3>
+<p>Click to apply a Fade In preset to selected element in Webflow.</p>
+
+<button id="fadeButton">Apply Fade In</button>
+
+<script>
+  document.getElementById("fadeButton").onclick = async () => {
+    const selected = await webflow.designer.getSelectedElement();
+    if (!selected) {
+      alert("Select an element first.");
+      return;
+    }
+
+    webflow.designer.injectScript(`
+      if (!window.gsapLoaded) {
+        var s = document.createElement('script');
+        s.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js';
+        s.onload = () => { window.gsapLoaded = true; runAnim(); };
+        document.head.appendChild(s);
+      } else {
+        runAnim();
+      }
+
+      function runAnim() {
+        gsap.from('[data-wf-id="${selected.id}"]', {
+          opacity: 0,
+          y: 40,
+          duration: 0.9,
+          ease: "power2.out"
+        });
+      }
+    `);
+  };
+</script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "GSAP Test",
+  "slug": "gsap-test",
+  "version": "0.0.1",
+  "appUrl": "https://your-domain.com/panel.html",
+  "description": "Test GSAP preset injection.",
+  "scopes": ["designer"],
+  "designer": {
+    "components": [
+      {
+        "type": "panel",
+        "label": "GSAP Test Panel",
+        "source": "https://your-domain.com/panel.html"
+      }
+    ]
+  }
+}
